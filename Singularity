@@ -3,6 +3,7 @@ From: conda/miniconda3
 
 %files
 	./Next_trials_ITAINNOVA.zip /root
+	./easy.sh /usr/local/bin
 
 %post
 	apt-get -y update && apt-get install -y unzip
@@ -14,9 +15,7 @@ From: conda/miniconda3
 	conda activate tf_test
 	pip install optuna keras scikit-learn pandas
 	unzip /root/Next_trials_ITAINNOVA.zip -d /usr/local/
+	chmod +x /usr/local/bin/easy.sh
 %runscript
-	conda init bash
-	. ~/.bashrc
-	conda activate tf_test
-	python /usr/local/Next_trials/Codigo/easy.py
+	/usr/local/bin/easy.sh
 
