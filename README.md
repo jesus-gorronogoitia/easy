@@ -1,1 +1,2 @@
-# singularity
+# easy
+Example of Singularity container
